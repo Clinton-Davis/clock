@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&family=Roboto:ital,wght@0,300;0,400;1,400&display=swap");
+:root {
+  --primary-color: rgb(0, 0, 0);
+  --secondary-color: rgb(255, 255, 255);
+  --red: rgb(255, 0, 0);
+  --yellow: rgb(255, 255, 0);
+  --goldman: "Goldman", sans-serif;
+  --Roboto: "Roboto", sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+
+html {
+  transition: all 0.5s ease-in;
+}
+html.dark {
+  --primary-color: rgb(255, 255, 255);
+  --secondary-color: rgb(51, 51, 51);
+}
+
+html.dark {
+  background-color: rgb(17, 17, 17);
+  color: var(--primary-color);
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--goldman);
+}
+
+.toggle {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 4px;
+  padding: 0.5rem 0.7rem;
+  position: absolute;
+  cursor: pointer;
+  top: 100px;
+}
+
+.clock-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clock {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  /* background-color: rgb(180, 177, 177) */
+}
+
+.hands {
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 65px;
+  width: 3px;
+  transform-origin: bottom center;
+  transition: all 0.3s linear;
+}
+
+.hands.hour {
+  transform: translate(-50%, -100%) rotate(0deg);
+}
+.hands.min {
+  transform: translate(-50%, -100%) rotate(0deg);
+  height: 100px;
+}
+.hands.sec {
+  transform: translate(-50%, -100%) rotate(0deg);
+  height: 100px;
+  background-color: var(--red);
+}
+
+.center-point {
+  background-color: var(--red);
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+.center-point::after {
+  content: "";
+  background-color: var(--primary-color);
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.time {
+  font-size: 4.5rem;
+}
+.date {
+  color: rgb(134, 134, 134);
+  font-size: 1.2rem;
+}
+
+.date .circle {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 50%;
+  height: 1.5rem;
+  width: 1.5rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease-in;
+  font-size: 1.2rem;
+}
